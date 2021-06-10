@@ -1,3 +1,5 @@
+from time import perf_counter_ns
+
 def find(L, target):
     start = 0
     end = len(L) - 1
@@ -26,9 +28,14 @@ x = x.lower()
 x = x + "\n"
 print(x)
 
+t1_start = perf_counter_ns()
 result = find(arr, x)
+t1_stop = perf_counter_ns()
 
 if (result is None):
 	print("Element not present in the list. Rerun program.")
 else:
 	print("Element found at line: " , result+1)
+
+t = t1_stop-t1_start
+print("The runtime performance is " + str(t) + " nanoseconds.")
