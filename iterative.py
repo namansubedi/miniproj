@@ -1,14 +1,22 @@
 from time import perf_counter_ns
+import matplotlib.pyplot as plt
+
+global list
+list = []
 
 #performance compare function"
 def perf(arr):
-    target = ["a", "matter", "yourself"]
+    target = ["a", "economy", "matter", "see", "yourself"]
     for tar in target:
         t1_start = perf_counter_ns()
         result = find(arr, tar+"\n")
         t1_stop = perf_counter_ns()
         t = t1_stop-t1_start
-        print("To find " + str(tar) + " on index " + str(result+1) + " : " + str(t) + " ns. Jumps = " + str(jump))
+        if result is not None:
+            print("To find " + str(tar) + " on line " + str(result+1) + " : " + str(t) + " ns. Jumps = " + str(jump))
+        else:
+            print("None")
+        list.append(t)
 
 def find(L, target):
     start = 0
@@ -56,3 +64,29 @@ else:
 
 t = t1_stop-t1_start
 print("The runtime performance: " + str(t) + " ns. Jumps = " + str(jump))
+
+
+  
+# x-coordinates of left sides of bars 
+left = [1, 2, 3, 4, 5]
+  
+# heights of bars
+#height = [10, 24, 36, 40, 5]
+height = list
+  
+# labels for bars
+tick_label = ['0', '249', '499', '749', '999']
+  
+# plotting a bar chart
+plt.bar(left, height, tick_label = tick_label,
+        width = 0.8, color = ['black'])
+  
+# naming the x-axis
+plt.xlabel('Index')
+# naming the y-axis
+plt.ylabel('Time\n(in nanoseconds)')
+# plot title
+plt.title('Binary Search')
+  
+# function to show the plot
+plt.show()
