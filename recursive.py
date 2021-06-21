@@ -33,9 +33,6 @@ x = str(input("Enter your value: "))
 x = x.lower()
 x = x + "\n"
 
-
-# Function call
-
 t1_start = perf_counter_ns()
 result = binary_search(arr, 0, len(arr)-1, x)
 t1_stop = perf_counter_ns()
@@ -44,11 +41,9 @@ t1_stop = perf_counter_ns()
 
 
 if result != -1:   
-   print("Element is present at index", str(result+1))  
-   
-   print("______________________")
+   print("Element found at line: ", str(result+1))  
 else:   
    print("Element is not present in array")  
    
 t = t1_stop-t1_start
-print("The runtime performance: " + str(t) + " ns.")
+print("The runtime performance: " + str(t) + " nanoseconds.\n")
