@@ -1,4 +1,5 @@
 from time import perf_counter_ns
+from rich import print
 
 def binary_search(arr, low, high, x):
 	

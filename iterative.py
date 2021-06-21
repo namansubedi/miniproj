@@ -1,4 +1,5 @@
 from time import perf_counter_ns
+from rich import print
 import matplotlib.pyplot as plt
 
 global list
@@ -73,6 +74,7 @@ left = [1, 2, 3, 4, 5]
 # heights of bars
 #height = [10, 24, 36, 40, 5]
 height = list
+print(height)
   
 # labels for bars
 tick_label = ['0', '249', '499', '749', '999']
